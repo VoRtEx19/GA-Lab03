@@ -18,13 +18,12 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         com.example.lab03.databinding.ActivitySecondBinding binding =
                 ActivitySecondBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_second);
+        setContentView(binding.getRoot());
 
         TextView textView = binding.tvActivity2TextEntered;
         Button button = binding.bActivity2Back;
 
         textView.setText(MainActivity.name);
-        Log.i("Activity2", "Text set" + textView.getText().toString());
         button.setOnClickListener(this);
     }
 
