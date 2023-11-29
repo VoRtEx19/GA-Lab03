@@ -7,4 +7,5 @@
     <string name="text_you_entered">Вы ввели:</string>
     <string name="next">NEXT</string>
     <string name="back">BACK</string>
+    <string name="exit">Exit</string>
 </resources>

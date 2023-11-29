@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/b_activity1_exit"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="@string/exit"
+        android:textColor="@color/gentle_red"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/divider_activity1"
+        app:layout_constraintEnd_toStartOf="@id/title_activity1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/title_activity1"
         android:layout_width="wrap_content"

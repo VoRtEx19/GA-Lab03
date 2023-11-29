@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,9 +12,11 @@ import com.example.lab03.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public static String name;
+    private String name;
 
     private EditText editText;
+    private Button button_next;
+    private Button button_exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +26,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(binding.getRoot());
 
         editText = binding.etActivity1EnterName;
-        final Button button = binding.bActivity1Next;
+        button_next = binding.bActivity1Next;
+        button_exit = binding.bActivity1Exit;
 
         editText.setText(name);
-        button.setOnClickListener(this);
+        button_next.setOnClickListener(this);
+        button_exit.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        name = editText.getText().toString();
-        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-        startActivity(intent);
+        if (v == button_next) {
+            name = editText.getText().toString();
+            Bundle bundle = new Bundle();
+            bundle.putString("enteredName", name);
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
+        } else if (v == button_exit) {
+            finish();
+        }
     }
 }

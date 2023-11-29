@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,13 +22,17 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         TextView textView = binding.tvActivity2TextEntered;
         Button button = binding.bActivity2Back;
 
-        textView.setText(MainActivity.name);
+        Intent extras = getIntent();
+        Bundle b = extras.getExtras();
+        String name = b.getString("enteredName");
+
+
+        textView.setText(name);
         button.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(SecondActivity.this, MainActivity.class);
-        startActivity(intent);
+        finish();
     }
 }
