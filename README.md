@@ -4,3 +4,5 @@
 Feauters:
 - given task
 - usage of databinding (view binding)
+- usage of Bundle
+- usage of styles (for button)
